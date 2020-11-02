@@ -73,9 +73,9 @@ Power_Bleed = P*(0.001);                                                    %Som
 deltaTf_DHRS = 30;                                                         %Temperature drop by broken DHRS [deg. C]
 slug_time = 8.46;                                                          %Duration of slug [s]
 
-% 
-run('SMD_MSR_Para_V1.slx')
-sim('MSD_MSR_Sim_V1.slx');
+
+run('SMD_MSR_Para_V1')
+sim('SMD_MSR_Sim_V1.slx');
 
 %% Plotting Results 
 %Create time offsets and find time = 0 index for other offsets

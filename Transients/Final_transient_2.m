@@ -17,7 +17,7 @@
 %% User Inputs
 
 %%% Basic Simulation Parameters
-simtime = 6000;                                                            %Simulation time [s]
+simtime = 9000;                                                            %Simulation time [s]
 ts_max = 1e-2;                                                             %Maximum timestep [s] 
 P=8;                                                                       %Operational thermal power [MW]
 
@@ -31,7 +31,7 @@ sourcedata = [0 0 0];                                                      %Neut
 sourcetime = [0 1000 2500];                                                %Neutron source insertion time [s]
 source = timeseries(sourcedata,sourcetime);                                %Defining source timeseries  
 
-reactdata = [0 -0.014 -0.014 -0.014 -0.014 -0.014];                        %Reactivity insertions [abs]
+reactdata = [0 -0.028 -0.028 -0.028 -0.028 -0.028];                        %Reactivity insertions [abs]
 reacttime = [0 2000 2000 5000 7500 15000];                                 %Reactivity insertion time [s]
 react = timeseries(reactdata,reacttime);                                   %Defining source timeseries
 
@@ -73,8 +73,8 @@ deltaTf_DHRS = 30;                                                         %Temp
 slug_time = 8.46;                                                          %Duration of slug [s]
 
 
-run('SMD_MSR_Para_V1.slx')
-sim('MSD_MSR_Sim_V1.slx');
+run('SMD_MSR_Para_V1')
+sim('SMD_MSR_Sim_V1.slx');
 
 %% Plotting Results 
 %Create time offsets and find time = 0 index for other offsets
@@ -144,5 +144,5 @@ height=1050;
 set(gcf,'position',[x0,y0,width,height])
 
 % Save plot as fig and png
-saveas(gcf,'Transient_2_last.png')
-savefig('Transient_2_last.fig')
+saveas(gcf,'Transient_2.png')
+savefig('Transient_2.fig')
