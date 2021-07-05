@@ -82,7 +82,7 @@ offsetindex = find(time==0);
 powerR = (Temp_mux(:,1)+Temp_mux(:,2))*P;
 poweroffset = powerR(offsetindex );
 
-%openfig('Exp1MW.fig'); to add experimental data grab Exp1MW.fig from https://github.com/ondrejch/2017-MSRE-paper/tree/master/paper_figs/dynamics
+%openfig('Exp1MW.fig'); %to add experimental data grab Exp1MW.fig from https://github.com/ondrejch/2017-MSRE-paper/tree/master/paper_figs/dynamics
 hold on
 plot(time,(powerR - poweroffset),'color','#FF00FF','LineWidth',1)
 
