@@ -67,6 +67,9 @@ demand = timeseries(demanddata,demandtime);                                %Defi
 DHRS_MODE = 1; 
 DHRS_time=20000000;                                                        %Time at which DRACS will be activated. use simtime to keep it off [s]
 
+DHRS_Power = 0;
+Power_Bleed = 0;
+
 %%% Only for DHRS_MODE = 2
 deltaTf_DHRS = 30;                                                         %Temperature drop by broken DHRS [deg. C]
 slug_time = 100000;                                                        %Duration of slug [s]
@@ -83,9 +86,8 @@ offsetindex = find(time==0);
 powerR = (Temp_mux(:,1)+Temp_mux(:,2))*P;
 poweroffset = powerR(offsetindex );
 
-% openfig('Exp8MW.fig');
+% openfig('Exp8MW.fig'); %to add experimental data grab Exp5MW.fig from https://github.com/ondrejch/2017-MSRE-paper/tree/master/paper_figs/dynamics
 hold on
-% plot(time,(powerR - poweroffset),'color','#FF00FF','LineWidth',1)
 plot(time,(powerR - poweroffset),'--','color','#FF00FF','LineWidth',1)
 
 title('+24.8[pcm] & +14.8[pcm] step insertion @8[MW_t] U233 benchmark')
