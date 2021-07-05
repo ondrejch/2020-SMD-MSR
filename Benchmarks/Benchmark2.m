@@ -78,11 +78,10 @@ offsetindex = find(time==0);
 powerR = (Temp_mux(:,1)+Temp_mux(:,2))*P;
 poweroffset = powerR(offsetindex );
 poweroffset1 = (PKE_Neutronics(offsetindex,3));
-openfig('Exp5MW.fig');
-hold on
 
+%openfig('Exp5MW.fig'); %to add experimental data grab Exp5MW.fig from https://github.com/ondrejch/2017-MSRE-paper/tree/master/paper_figs/dynamics
+hold on
 plot(time,(powerR - poweroffset),'color','#FF00FF','LineWidth',1)
-% plot(time,(PKE_Neutronics(:,3) - poweroffset1),'LineWidth',1)
 
 title('+19.6[pcm] step insertion @5[MW_t] U233 benchmark')
 xlabel('Time [s]')
