@@ -49,6 +49,9 @@ Trip_S_pump=20000000;                                                      %Time
 UHX_MODE = 2;
 Block_UHE=20000000;                                                        %Time at which ultimate heat exchanger will be cut off [s]
 
+DHRS_Power = 0;
+Power_Bleed = 0;
+
 %%% Only for UHX_MODE = 2
 demanddata = [1 1 5/8 5/8 5/8];                                            %Reactivity insertions [abs]
 demandtime = [0 1000 2000 3000 6000];                                      %Reactivity insertion time [s]
