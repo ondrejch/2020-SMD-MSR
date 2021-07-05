@@ -50,6 +50,9 @@ Trip_S_pump=20000000;                                                      %Time
 UHX_MODE = 2;
 Block_UHE=20000000;                                                        %Time at which ultimate heat exchanger will be cut off [s]
 
+DHRS_Power = 0;
+Power_Bleed = 0;
+
 %%% Only for UHX_MODE = 2
 demanddata = [1 1 1/8 1/8 1/8];                                            %Reactivity insertions [abs]
 demandtime = [0 1000 2000 3000 6000];                                      %Reactivity insertion time [s]
@@ -79,8 +82,8 @@ offsetindex = find(time==0);
 powerR = (Temp_mux(:,1)+Temp_mux(:,2))*P;
 poweroffset = powerR(offsetindex );
 
-openfig('Exp1MW.fig');
-figure (1)
+%openfig('Exp1MW.fig'); to add experimental data grab Exp1MW.fig from https://github.com/ondrejch/2017-MSRE-paper/tree/master/paper_figs/dynamics
+hold on
 plot(time,(powerR - poweroffset),'color','#FF00FF','LineWidth',1)
 
 title('+13.9[pcm] step insertion @1[MW_t] U233 benchmark')
