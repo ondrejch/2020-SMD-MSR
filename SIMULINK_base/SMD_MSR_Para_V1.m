@@ -186,7 +186,7 @@ T0_f2  = 6.57E+02; % 6.5444E+02; % in �C 6.461904761904777e+02; ORNL-TM-1647 p
 % T0_g1  = 6.589285714285924E+02; %in �C 
 
 T0_f1  = Tf_in + (T0_f2-Tf_in)/2; % 6.405952380952389e+02; in �C
-T0_g1  = T0_f1+(k_g*P_MSRE/hA_fg); % 6.589285714285924e+02; in �C 
+T0_g1  = T0_f1+(k_g*P/hA_fg); % 6.589285714285924e+02; in �C 
 
 %% Heat Exchanger 
 v_tube = 4572; % (in^3) hx shell volume occupied by tubes
