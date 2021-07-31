@@ -71,9 +71,9 @@
 
 P_MSRE = 8; %Operational power of MSRE [MW]
 
-Psf_li = P/P_MSRE; %Cube scaling factor
-Psf_sq = power(Psf_li,1/2); %Square scaling factor
-Psf_cu = power(Psf_li,1/3); %Linear scaling factor
+Psf_li = P/P_MSRE; %Cube scaling factor (for volumes)
+Psf_sq = power(Psf_li,2/3); %Square scaling factor (for areas)
+Psf_cu = power(Psf_li,1/3); %Linear scaling factor (for lenghts)
 
 %% Circulation Parameters (Salt resident times) {tau_x*vdot_x=volume_x}
 %Primary loop
